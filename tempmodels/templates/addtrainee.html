@@ -1,0 +1,38 @@
+<head>
+  <link
+    href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
+  <title>Add Trainee Form</title>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  
+
+  {% extends 'homenav.html' %}
+  <body>
+    {%block content%}
+    <div id="login">
+      <h3 class="text-center text-white pt-5">Add Trainee form</h3>
+      <div class="container">
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" method="post">
+                {%csrf_token %}
+                <h3 class="text-center text-info">Add Trainee Form</h3>
+                {{form}}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  {%endblock%}
+</body>

@@ -1,0 +1,53 @@
+<head>
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous"
+  />
+</head>
+<body>
+  {% extends 'nav.html' %}
+  {% load static %}
+  {%block content%}
+  <img src="{% static 'images/3683.jpg' %}" width="100%"/>
+  <h1 style="text-align:center">Welcome To Home</h1><br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" style="font-weight:bold;text-align:center">Editing Trainees</a>
+            <a href="addtrainee" style="text-align:center" class="list-group-item list-group-item-action list-group-item-info">Insert</a>
+            <a href="updatetrainee" style="text-align:center" class="list-group-item list-group-item-action list-group-item-info">Update</a>
+            <a href="deletetrainee" style="text-align:center" class="list-group-item list-group-item-action list-group-item-info">Delete</a>
+            <a href="search" style="text-align:center" class="list-group-item list-group-item-action list-group-item-info">Search</a>
+          </div><br><br>
+          <tr>
+            <th colspan="6">
+              <a href="#" class="list-group-item list-group-item-action" style="font-weight:bold;text-align:center">Trainees List</a>
+              </th>
+          </tr>
+        </tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthday</th>
+          <th scope="col">promotion</th>
+          <th scope="col">Intake</th>
+          <th scope="col">Track</th>
+      </thead>
+      <tbody>
+        {%for trainee in trainees%}
+      <tr>
+        <td>{{trainee.id}}</td>
+        <td>{{trainee.name}}</td>
+        <td>{{trainee.bdate}}</td>
+        <td>{{trainee.promotion}}</td>
+        <td>{{trainee.intake}}</td>
+        <td>{{trainee.track}}</td>
+      </tr>
+      {%endfor%}
+      </tbody>
+    </table>
+    {%endblock%}
+  </body>
+  

@@ -1,0 +1,57 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  {% extends 'homenav.html' %} 
+  {%block content%}
+  <form id="login-form" class="form" method="post">
+    {%csrf_token %}
+    <h3 class="text-center text-info">Search For Trainee</h3>
+    <div class="form-group">
+      <label for="name" class="text-info">Trainee Name:</label><br />
+      <input type="text" name="name" id="name" class="form-control" />
+    </div>
+    <div class="form-group">
+      <input
+        type="submit"
+        name="submit"
+        class="btn btn-info btn-md"
+        value="Search"
+      />
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="6">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action"
+            style="font-weight: bold; text-align: center"
+            >Trainees Results</a
+          >
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for trainee in trainees%}
+      <tr>
+        <td>{{trainee.id}}</td>
+        <td>{{trainee.name}}</td>
+        <td>{{trainee.bdate}}</td>
+        <td>{{trainee.promotion}}</td>
+        <td>{{trainee.intake}}</td>
+        <td>{{trainee.track}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%endblock%}
+</body>
+
+

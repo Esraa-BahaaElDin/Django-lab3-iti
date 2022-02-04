@@ -1,0 +1,109 @@
+<head>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <title>Update Trainee Form</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {% extends 'homenav.html' %}
+    <body>
+      {%block content%}
+      <div id="login">
+        <h3 class="text-center text-white pt-5">Update Trainee form</h3>
+        <div class="container">
+          <div
+            id="login-row"
+            class="row justify-content-center align-items-center"
+          >
+            <div id="login-column" class="col-md-6">
+              <div id="login-box" class="col-md-12">
+                <form id="login-form" class="form" method="post">
+                  {%csrf_token %}
+                  <h3 class="text-center text-info">Update Trainee Form</h3>
+                  <div class="form-group">
+                    <label for="id" class="text-info">Trainee Id:</label
+                    ><br />
+                    <input
+                      type="number"
+                      name="id"
+                      id="id"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="name" class="text-info">Trainee Name:</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="date" class="text-info">Trainee Birthday:</label
+                    ><br />
+                    <input
+                      type="date"
+                      name="date"
+                      id="date"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="promotion" class="text-info"
+                      >Trainee Promotion:</label
+                    ><br />
+                    <input
+                      type="number"
+                      name="promotion"
+                      id="promotion"
+                      class="form-control"
+                      min="0"
+                      max="500"
+                      step="0.25"
+                      value="0.00"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="intake" class="text-info">Trainee Intake:</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="intake"
+                      id="intake"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="track" class="text-info">Trainee Track:</label
+                    ><br />
+                    <input
+                      type="text"
+                      name="track"
+                      id="track"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      name="submit"
+                      class="btn btn-info btn-md"
+                      value="Update"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    {%endblock%}
+  </body>
+  
